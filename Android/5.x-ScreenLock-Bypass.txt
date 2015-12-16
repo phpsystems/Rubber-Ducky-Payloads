@@ -1,3 +1,5 @@
+REM Originally from:
+REM https://github.com/aluech/Android-USB-Rubber-Duck
 DELAY 5000
 SPACE
 DELAY 500
